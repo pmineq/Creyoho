@@ -37,9 +37,9 @@ ul, ol, li, dl {list-style: none; padding: 0; margin: 0; }
 
 .menu-wrap {display: flex; border-radius: 3px; overflow: hidden; }
 .menu-wrap:hover {background-color: #f9f9f9; }
-.btn-favorite {width: 30px; min-width: auto; height: 30px; padding: 0; border: 0; }
+.btn-favorite {width: 20px; min-width: 20px; height: 30px; padding: 0; border: 0; }
 
-.btn-favorite:after {content: ""; display: block; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url("../images/common/icon_favorite.png"); background-repeat: no-repeat; background-size: 15px 15px; background-position: top 5px center; }
+.btn-favorite:after {content: ""; display: block; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url("../images/common/icon_favorite.png"); background-repeat: no-repeat; background-size: 15px 15px; background-position: top 10px center; }
 .btn-favorite:hover:after {background-color: transparent; background-image: url("../images/common/icon_favorite_on.png"); }
 
 .btn-favorite.active:after {background-image: url("../images/common/icon_favorite_on.png"); }
@@ -57,10 +57,10 @@ ul, ol, li, dl {list-style: none; padding: 0; margin: 0; }
 
 
 .nav-category {display: block; width: 100%; padding: 0 12px 8px; box-sizing: border-box; font-size: 15px; font-weight: 500; color: #222; }
-.nav-category li {display: flex; align-items: baseline; }
+.nav-category li {display: flex; align-items: center; }
 .nav-category .category-menu {display: block; width: calc(100% - 30px); padding: 8px 8px; font-size: 14px; font-weight: 400; color: #666; }
-.nav-category .category-menu:hover {color: #9c8b40; }
-.nav-category .category-menu.active {color: #9c8b40; }
+.nav-category .category-menu:hover {color: #9c8b40 !important; }
+.nav-category .category-menu.active {color: #9c8b40 !important; }
 .active .nav-category {display: none; }
 
 .nav-close {position: fixed; top: 50%; left: 230px; width: 24px; min-width: 24px; height: 80px; padding: 0; border: 1px solid #eee; border-left: 0; border-radius: 0; border-top-right-radius: 15px; border-bottom-right-radius: 15px; background-color: #fff; box-shadow: 6px 0px 8px 0px rgb(141 141 141 / 12%); text-indent: -9999px; z-index: 10; transform: translateY(-50%); transition: all 0.3s; }

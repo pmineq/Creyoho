@@ -5,6 +5,10 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta property="og:image" content="../AppData/images/common/share.png">
+  <meta property="me2:image" content="../AppData/images/common/share.png">
+	<link rel="shortcut icon" href="../AppData/images/common/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="../AppData/images/common/favicon.ico" type="image/x-icon">
 
 	<title>Creyoho</title>
 
@@ -183,8 +187,8 @@
 							</div>
 							<ul>
 								<li><button type="button" class="profile">Profile</button></li> 
-								<li><button type="button" class="lock">Lock</button></li>
-								<li><button type="button" class="logout">Logout</button></li>
+								<li><button type="button" onclick="location.href='lock.html'" class="lock">Lock</button></li>
+								<li><button type="button" onclick="location.href='login.html'" class="logout">Logout</button></li>
 								<li>
 									<div class="dark-switch"> 
 										<input type="checkbox" id="ck_dark" class="check-dark">
@@ -417,15 +421,15 @@
 					<div class="clear">
 						<div class="division" style="float: left; width: 33.333%; "> 
 							<strong class="ui-title02">.bg-main</strong>
-							<div class="bg-main" style="width: 100px; height: 50px; border: 1px solid #eee; border-radius: 5px; "></div>
+							<div class="bg-main" style="width: 100px; height: 50px; border: 1px solid #eee; border-radius: 5px; text-align: center; line-height: 48px; ">#9c8b40</div>
 						</div>
 						<div class="division" style="float: left; width: 33.333%; "> 
 							<strong class="ui-title02">.bg-red</strong>
-							<div class="bg-red" style="width: 100px; height: 50px; border: 1px solid #eee; border-radius: 5px; "></div>
+							<div class="bg-red" style="width: 100px; height: 50px; border: 1px solid #eee; border-radius: 5px; text-align: center; line-height: 48px; ">#df0000</div>
 						</div>
 						<div class="division" style="float: left; width: 33.333%; "> 
 							<strong class="ui-title02">.bg-black</strong>
-							<div class="bg-black" style="width: 100px; height: 50px; border: 1px solid #eee; border-radius: 5px; "></div>
+							<div class="bg-black" style="width: 100px; height: 50px; border: 1px solid #eee; border-radius: 5px; text-align: center; line-height: 48px; ">#333</div>
 						</div>
 					</div>
 				</article>
@@ -488,6 +492,18 @@
 						<strong class="ui-title02">.small</strong>
 						<button type="button" class="small">BUTTON</button>
 						<a href="javascript:void(0)" class="btn small">BUTTON</a>
+					</div>
+					<hr/>
+					<div class="division">
+						<strong class="ui-title02">.disable 또는 disabled 상태</strong>
+						<button type="button" class="disabled">BUTTON</button>
+						<a href="javascript:void(0)" class="btn disabled">BUTTON</a>
+						<button type="button" disabled>BUTTON</button>
+					</div>
+					<div class="division">
+						<strong class="ui-title02">.readonly</strong>
+						<button type="button" class="readonly">BUTTON</button>
+						<a href="javascript:void(0)" class="btn readonly">BUTTON</a>
 					</div>
 					<hr>
 					<div class="division">
@@ -683,6 +699,16 @@
 							<option>option03</option>
 						</select>
 					</div>
+
+					<hr>
+					<div class="division">
+						<strong class="ui-title02">input file</strong>
+						<div class="filebox">
+							<input class="upload-name" value="첨부파일" placeholder="첨부파일">
+							<label for="file">파일찾기</label> 
+							<input type="file" id="file" class="input-file">
+						</div>
+					</div>
 				</article>
 
 				<article> 
@@ -698,6 +724,13 @@
 								<label for="input02" class="input-title">인풋 라벨 타이틀</label>
 								<input type="text" id="input02">
 							</div>
+						</div>
+						<hr/>
+						<strong class="ui-title02">.essential</strong>
+						<p>.essential 클래스명 추가 시 텍스트 before 요소로 *가 추가됩니다.</p><br/>
+						<div class="form-item">
+							<label for="input02" class="input-title essential">인풋 라벨 타이틀</label>
+							<input type="text" id="input02">
 						</div>
 					</div>
 				</article>
@@ -718,7 +751,7 @@
 								<label for="checkbox01">checkbox01</label>
 							</div>
 							<div class="checkbox">
-								<input type="checkbox" id="checkbox02">
+								<input type="checkbox" id="checkbox02" checked>
 								<label for="checkbox02">checkbox02</label>
 							</div>
 							<div class="checkbox">
@@ -761,7 +794,7 @@
 								<label for="radio01">radio01</label>
 							</div>
 							<div class="radiobox">
-								<input type="radio" id="radio02" name="radio">
+								<input type="radio" id="radio02" name="radio" checked>
 								<label for="radio02">radio02</label>
 							</div>
 							<div class="radiobox">
@@ -774,17 +807,41 @@
 						<strong class="ui-title02">radio-group column</strong>
 						<div class="radio-group column">
 							<div class="radiobox">
-								<input type="radio" id="radio04" name="radio">
+								<input type="radio" id="radio04" name="radio_column">
 								<label for="radio04">radio04</label>
 							</div>
 							<div class="radiobox">
-								<input type="radio" id="radio05" name="radio">
+								<input type="radio" id="radio05" name="radio_column">
 								<label for="radio05">radio05</label>
 							</div>
 							<div class="radiobox">
-								<input type="radio" id="radio06" name="radio">
+								<input type="radio" id="radio06" name="radio_column">
 								<label for="radio06">radio06</label>
 							</div>
+						</div>
+					</div>
+
+					<hr>
+					<div class="division"> 
+						<strong class="ui-title02">disabled</strong>
+						<div class="checkbox">
+							<input type="checkbox" disabled>
+							<label for="">disabled</label>
+						</div>
+						<br/>
+						<div class="radiobox">
+							<input type="radio" disabled>
+							<label for="">disabled</label>
+						</div>
+						<br/>
+						<div class="checkbox">
+							<input type="checkbox" disabled checked>
+							<label for="">disabled - checked</label>
+						</div>
+						<br/>
+						<div class="radiobox">
+							<input type="radio" disabled checked>
+							<label for="">disabled - checked</label>
 						</div>
 					</div>
 				</article>
@@ -840,7 +897,7 @@
 									<col width="15%">
 									<col width="*">
 									<col width="20%">
-									<col width="10%">
+									<col width="20%">
 								</colgrop>
 								<thead>
 									<tr>
@@ -852,6 +909,13 @@
 									</tr>
 								</thead>
 								<tbody>
+									<tr class="checked">
+										<td><input type="checkbox" id="" checked></td>
+										<td>tr>.checked</td>
+										<td>클래스명 .checked로 포인트 컬러 강조, input checked시 tr에 checked 클래스명 추가됨</td>
+										<td>bgcolor: #f5efd7</td>
+										<td>text: #9c8b40</td>
+									</tr>
 									<tr>
 										<td><input type="checkbox" id=""></td>
 										<td>Td02</td>
@@ -864,6 +928,34 @@
 										<td>Td02</td>
 										<td>Td03</td>
 										<td>Td04</td>
+										<td>Td05</td>
+									</tr>
+									<tr class="disabled">
+										<td><input type="checkbox" id="" disabled></td>
+										<td>tr>.disabled</td>
+										<td>클래스명 .disabled로 선택 불가능한 스타일</td>
+										<td>bgcolor: #ccc</td>
+										<td>text: #888</td>
+									</tr>
+									<tr class="red">
+										<td><input type="checkbox" id=""></td>
+										<td>tr>.red</td>
+										<td>클래스명 .red로 빨간 컬러 스타일 강조</td>
+										<td>bgcolor: #f5d7d7</td>
+										<td>text: #9c4040</td>
+									</tr>
+									<tr class="blue">
+										<td><input type="checkbox" id=""></td>
+										<td>tr>.blue</td>
+										<td>클래스명 .blue로 블루 컬러 스타일 강조</td>
+										<td>td04</td>
+										<td>Td05</td>
+									</tr>
+									<tr class="green">
+										<td><input type="checkbox" id=""></td>
+										<td>tr>.green</td>
+										<td>클래스명 .green로 그린 컬러 스타일 강조</td>
+										<td>td04</td>
 										<td>Td05</td>
 									</tr>
 									<tr>
@@ -1022,19 +1114,61 @@
 
 					<div class="division"> 
 						<strong class="ui-title02">.popup - 활용 소스</strong>
-						<button type="button" class="bg-main btn-round open-popup">popup open</button>
-						<div class="popup-wrap">
+						<button type="button" class="btn btn-round" data-popup-open="popup01">popup open</button>
+						<div class="popup-wrap" data-popup="popup01">
 							<div class="popup"> 
-							<div class="popup-header">
-								<h3>Popup Title</h3>
-								<button type="button" class="popup-close"><span class="visuallyhidden">팝업 닫기</span></button>
-							</div>
-							<div class="popup-body">삭제하시면 복구할 수 없습니다. 삭제하시겠습니까?</div>
-							<div class="popup-bottom"> 
-								<button type="button">취소</button>
-								<button type="button" class="bg-main">확인</button>
+								<div class="popup-header">
+									<h3>Popup Title</h3>
+									<button type="button" class="popup-close" data-popup-close="popup01"><span class="visuallyhidden">팝업 닫기</span></button>
+								</div>
+								<div class="popup-body">
+									팝업1
+								</div>
+								<div class="popup-bottom"> 
+									<button type="button">취소</button>
+									<button type="button" class="bg-main">확인</button>
+								</div>
 							</div>
 						</div>
+					</div>
+
+					<div class="division">
+						<button type="button" class="bg-main btn-round" data-popup-open="popup02">입력</button>
+						<div class="popup-wrap" data-popup="popup02">
+							<div class="popup big" style="max-width: 1000px; "> <!--해당부분 너비조절 가능-->
+								<div class="popup-header">
+									<h3>공지사항</h3>
+									<button type="button" class="popup-close" data-popup-close="popup02"><span class="visuallyhidden">팝업 닫기</span></button>
+								</div>
+								<div class="popup-body" style="max-height: 800px;"> <!--해당부분 높이조절 가능-->
+									<div class="form-item">
+										<label for="input02" class="input-title essential">제목</label>
+										<input type="text" id="input02" class="full">
+									</div>
+									<div class="form-item">
+										<label for="input02" class="input-title essential">노출 기간</label>
+										<div class="datepicker-wrap">
+											<input type="text" class="input-datepicker" id="input05"> <span class="swing">~</span> <input type="text" class="input-datepicker" id="input06">
+										</div>
+									</div>
+									<div class="form-item">
+										<label for="input02" class="input-title essential">내용</label>
+										<textarea style="height: 300px;"></textarea>
+									</div>
+									<div class="form-item">
+										<label for="input02" class="input-title">첨부파일</label>
+										<div class="filebox">
+											<input class="upload-name" value="첨부파일" placeholder="첨부파일">
+											<label for="file2">파일찾기</label> 
+											<input type="file" id="file2" class="input-file">
+										</div>
+									</div>
+								</div>
+								<div class="popup-bottom"> 
+									<button type="button">취소</button>
+									<button type="button" class="bg-main">확인</button>
+								</div>
+							</div>
 						</div>
 					</div>
 

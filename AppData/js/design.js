@@ -5,14 +5,12 @@ $(document).ready(function(){
 		$(this).parents('li').toggleClass('active');
 	});
 
-
 	//즐겨찾기
 	$('.btn-favorite').on('click', function(){
 		$(this).toggleClass('active');
 	});
 
 	// 상단 버튼
-
 	$(window).scroll(function(){
 		var scrT = $(window).scrollTop(); 
     var winH = $(window).height(); 
@@ -35,16 +33,53 @@ $(document).ready(function(){
 	});
 
 
-
-	$('.open-popup').on('click', function(){
-		$(this).next('.popup-wrap').fadeIn();
+	//table
+	$('tbody').on('click', 'input[type="checkbox"]', function(){
+		if($(this).is(':checked')){
+			$(this).parents('tr').addClass('checked');
+		} else {
+			$(this).parents('tr').removeClass('checked');
+		}
 	});
 
-	$('.popup-close').on('click', function(){
-		$(this).parents('.popup-wrap').fadeOut();
-	})
 
-	$('.input-datepicker').datepicker();
+	//popup OPEN    
+	$('[data-popup-open]').on('click', function(e) {
+		var targeted_popup_class = $(this).attr('data-popup-open');
+		$('[data-popup="' + targeted_popup_class + '"]').fadeIn(350);
+		e.preventDefault();
+	});
+
+	//popup CLOSE    
+	$('[data-popup-close]').on('click', function(e) {
+		var targeted_popup_class = $(this).attr('data-popup-close');
+		$('[data-popup="' + targeted_popup_class + '"]').fadeOut(350);
+		e.preventDefault();
+	});
+
+
+	//file
+	$('.filebox').each(function(){
+		$(this).find('.input-file').on('change',function(){
+			var fileName = $(this).val();
+			$(this).siblings('.upload-name').val(fileName);
+		});
+	});
+
+
+	$('.input-datepicker').datepicker({
+		changeMonth: true, 
+		changeYear: true,
+		nextText: '다음 달',
+		prevText: '이전 달', 
+		dayNames: ['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일'],
+		dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'], 
+		monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+		monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+		showMonthAfterYear: true,
+		dateFormat: "yy-mm-dd",
+		showButtonPanel: true,
+	});
 
 
 	$('.header-alarm').on('click', function(){
@@ -87,14 +122,6 @@ $(document).ready(function(){
 	});
 
 	responsive();
-
-//	$(document).on('click', '#ck_dark', function(){
-//		if($(this).prop('checked')){
-//			$('#wrapper').addClass('dark-mode');
-//		} else {
-//			$('#wrapper').removeClass('dark-mode');
-//		}
-//	});
 
 	if($('body').hasClass('dark')){
 		$('#ck_dark').prop("checked", true);
