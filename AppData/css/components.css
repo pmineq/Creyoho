@@ -513,7 +513,9 @@ table tr.green td {color: #409c48; }
 .popup-bottom button + button {margin-left: 20px; }
 
 .popup.big {width: 90%; max-width: 700px; }
-.popup.big .popup-body {min-height: 40vh; max-height: 50vh; }
+.popup.big > .popup-body {min-height: 40vh; max-height: 50vh; }
+
+.popup-wrap.sub {width: 100%; }
 
 
 /* popup alarm */
